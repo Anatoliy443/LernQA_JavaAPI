@@ -15,7 +15,10 @@ public class LongRedirectTest {
                 .get("https://playground.learnqa.ru/api/long_redirect")
                 .andReturn();
         int statusCode = response.getStatusCode();
-        System.out.println(statusCode);
+        System.out.println("status Code:"+statusCode);
+
+        int redirectCount=response.getDetailedCookies().size()-1;
+        System.out.println("Number of redirects="+redirectCount);
 
     }
 }
